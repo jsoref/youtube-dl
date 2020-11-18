@@ -1,0 +1,4 @@
+^\.github/
+ignore$
+\.pem$
+^AUTHORS$

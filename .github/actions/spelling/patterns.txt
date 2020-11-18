@@ -1,0 +1,34 @@
+tds.lifeway.com/[^']*
+
+# GitHub SHAs
+(?:\[[0-9a-f]+\]\(https:/|)/github\.com/[^/]+/[^/]+/[^/]+/[0-9a-f]+\b
+
+# youtube_dl/compat.py
+^\s+'[^']*':\s*'\\[Uux].*',$
+
+# hex digits including css/html color classes:
+(?:[\\0][xX]|\\u|[uU]\+|#|\%23)[0-9a-fA-FgGrR]{2,}[uU]?[lL]{0,2}\b
+
+# uuid:
+[{"'][0-9a-fA-F]{8}-(?:[0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}['"}]
+
+# URL escaped characters
+\%[0-9A-F]{2}
+
+<SegmentURL media="[^"]*"
+>[^<]*</bootstrapInfo
+
+\(\?:[^)]*\)
+'(?:access_key|description|display_id|name|series|skip|title|url)': (?:'.*'|".*")
+'(?:categories|expected_warnings)': \[.*\],?$
+
+"[0-9a-f]{64}"
+#'id': '[0-9a-f]{24}'
+'id': '[^']*'
+'md5': '[0-9a-f]{32}'
+md5:[0-9a-f]{32}
+metadata>[a-zA-Z=;,/0-9+-]+<
+'url': '[^']*'
+# ignore long runs of a single character:
+\b([A-Za-z])\1{3,}\b
+
